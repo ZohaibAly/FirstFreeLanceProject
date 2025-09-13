@@ -1,4 +1,3 @@
-// src/constants/theme.js
 const theme = {
   colors: {
     blue: "#0D2844",
