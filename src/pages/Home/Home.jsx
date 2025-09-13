@@ -1,5 +1,8 @@
-import React from 'react';
+import React from "react";
+import HeroComp from "../../components/HeroComp/HeroComp";
 
-export default function HomePage() {
-  return <div style={{ padding: 24 }}>Home works ✅</div>;
-}
+const HomePage = () => {
+  <HeroComp />;
+};
+
+export default HomePage;
