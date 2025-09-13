@@ -1,8 +1,7 @@
+// src/pages/Home.jsx
 import React from "react";
 import HeroComp from "../../components/HeroComp/HeroComp";
 
-const HomePage = () => {
-  <HeroComp />;
-};
-
-export default HomePage;
+export default function HomePage() {
+  return <HeroComp />;
+}

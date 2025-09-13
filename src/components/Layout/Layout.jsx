@@ -1,31 +1,17 @@
-// Layout.jsx
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import LazyWrapper from '../LazyWrapper/LazyWrapper';
+import Navbar from '../Navbar/Navbar';                  // keep eager (avoid double loaders)
+import Loader from '../Load/Loader';           // your spinner (overlay=true centers it)
 
-// Lazy-load your chrome components (Navbar/Footer)
-const Navbar = React.lazy(() => import('../Navbar/Navbar'));
-// const Footer = React.lazy(() => import('../Footer'));
-
-const Layout = () => {
+export default function Layout() {
   return (
     <>
- 
-      <LazyWrapper>
-        <Navbar />
-      </LazyWrapper>
-
+      <Navbar />
       <main>
-        <LazyWrapper>
+        <Suspense fallback={<Loader overlay />}>
           <Outlet />
-        </LazyWrapper>
+        </Suspense>
       </main>
-
-      {/* <LazyWrapper>
-        <Footer />
-      </LazyWrapper> */}
     </>
   );
-};
-
-export default Layout;
+}
